@@ -12,6 +12,25 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		5326AEA810A23A0500278DE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326AEA710A23A0500278DE6 /* CoreLocation.framework */; };
 		53F323EB10A20EDB00E0DAE4 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */; };
+		9DB03B661734E8F90041F0E9 /* ofxiphone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */; };
+		9DB03B671734E8F90041F0E9 /* Project.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E41D3ED613B38FB500A75A5D /* Project.xcconfig */; };
+		9DB03B681734E8F90041F0E9 /* CoreOF.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E41D3EE513B3906D00A75A5D /* CoreOF.xcconfig */; };
+		9DB03B6A1734E8F90041F0E9 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
+		9DB03B6B1734E8F90041F0E9 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* testApp.mm */; };
+		9DB03B6D1734E8F90041F0E9 /* libofxiPhone_iphoneos_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D410213B3A0D800A75A5D /* libofxiPhone_iphoneos_Debug.a */; };
+		9DB03B6E1734E8F90041F0E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		9DB03B6F1734E8F90041F0E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		9DB03B701734E8F90041F0E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		9DB03B711734E8F90041F0E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD10F2B2A9500518274 /* OpenGLES.framework */; };
+		9DB03B721734E8F90041F0E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD80F2B2AB500518274 /* QuartzCore.framework */; };
+		9DB03B731734E8F90041F0E9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */; };
+		9DB03B741734E8F90041F0E9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */; };
+		9DB03B751734E8F90041F0E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326AEA710A23A0500278DE6 /* CoreLocation.framework */; };
+		9DB03B761734E8F90041F0E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
+		9DB03B771734E8F90041F0E9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400613B39D2100A75A5D /* AVFoundation.framework */; };
+		9DB03B781734E8F90041F0E9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400713B39D2100A75A5D /* CoreMedia.framework */; };
+		9DB03B791734E8F90041F0E9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400813B39D2100A75A5D /* CoreVideo.framework */; };
+		9DB03B7A1734E8F90041F0E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400913B39D2100A75A5D /* MapKit.framework */; };
 		BB16EBD20F2B2A9500518274 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD10F2B2A9500518274 /* OpenGLES.framework */; };
 		BB16EBD90F2B2AB500518274 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD80F2B2AB500518274 /* QuartzCore.framework */; };
 		BB24DDCA10DA781C00E9C588 /* ofxiphone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */; };
@@ -29,6 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9DB03B641734E8F90041F0E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E41D40FD13B3A0D800A75A5D /* iOS+OFLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BB24DE5C10DA7A3F00E9C588;
+			remoteInfo = "iPhone+OF Static Library";
+		};
 		E41D410113B3A0D800A75A5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E41D40FD13B3A0D800A75A5D /* iOS+OFLib.xcodeproj */;
@@ -53,6 +79,8 @@
 		32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_Prefix.pch; sourceTree = "<group>"; };
 		5326AEA710A23A0500278DE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		9DB03B7F1734E8F90041F0E9 /* manekkoPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = manekkoPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB03B801734E8F90041F0E9 /* manekko copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "manekko copy-Info.plist"; path = "/Users/TyounanMOTI/Develop/openFrameworks/apps/myApps/manekko/manekko copy-Info.plist"; sourceTree = "<absolute>"; };
 		BB16EBD10F2B2A9500518274 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BB16EBD80F2B2AB500518274 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ofxiphone-Info.plist"; sourceTree = "<group>"; };
@@ -92,6 +120,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DB03B6C1734E8F90041F0E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB03B6D1734E8F90041F0E9 /* libofxiPhone_iphoneos_Debug.a in Frameworks */,
+				9DB03B6E1734E8F90041F0E9 /* Foundation.framework in Frameworks */,
+				9DB03B6F1734E8F90041F0E9 /* UIKit.framework in Frameworks */,
+				9DB03B701734E8F90041F0E9 /* CoreGraphics.framework in Frameworks */,
+				9DB03B711734E8F90041F0E9 /* OpenGLES.framework in Frameworks */,
+				9DB03B721734E8F90041F0E9 /* QuartzCore.framework in Frameworks */,
+				9DB03B731734E8F90041F0E9 /* AudioToolbox.framework in Frameworks */,
+				9DB03B741734E8F90041F0E9 /* OpenAL.framework in Frameworks */,
+				9DB03B751734E8F90041F0E9 /* CoreLocation.framework in Frameworks */,
+				9DB03B761734E8F90041F0E9 /* CoreGraphics.framework in Frameworks */,
+				9DB03B771734E8F90041F0E9 /* AVFoundation.framework in Frameworks */,
+				9DB03B781734E8F90041F0E9 /* CoreMedia.framework in Frameworks */,
+				9DB03B791734E8F90041F0E9 /* CoreVideo.framework in Frameworks */,
+				9DB03B7A1734E8F90041F0E9 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* manekko.app */,
+				9DB03B7F1734E8F90041F0E9 /* manekkoPhone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,6 +161,7 @@
 				BB16F26B0F2B646B00518274 /* addons */,
 				BB16E9930F2B1E5900518274 /* libs */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				9DB03B801734E8F90041F0E9 /* manekko copy-Info.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -191,9 +242,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* manekko */ = {
+		1D6058900D05DD3D006BFB54 /* manekkoPad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "manekko" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "manekkoPad" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -205,9 +256,28 @@
 			dependencies = (
 				E41D410413B3A11300A75A5D /* PBXTargetDependency */,
 			);
-			name = manekko;
+			name = manekkoPad;
 			productName = iPhone;
 			productReference = 1D6058910D05DD3D006BFB54 /* manekko.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DB03B621734E8F90041F0E9 /* manekkoPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DB03B7C1734E8F90041F0E9 /* Build configuration list for PBXNativeTarget "manekkoPhone" */;
+			buildPhases = (
+				9DB03B651734E8F90041F0E9 /* Resources */,
+				9DB03B691734E8F90041F0E9 /* Sources */,
+				9DB03B6C1734E8F90041F0E9 /* Frameworks */,
+				9DB03B7B1734E8F90041F0E9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DB03B631734E8F90041F0E9 /* PBXTargetDependency */,
+			);
+			name = manekkoPhone;
+			productName = iPhone;
+			productReference = 9DB03B7F1734E8F90041F0E9 /* manekkoPhone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -235,7 +305,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* manekko */,
+				1D6058900D05DD3D006BFB54 /* manekkoPad */,
+				9DB03B621734E8F90041F0E9 /* manekkoPhone */,
 			);
 		};
 /* End PBXProject section */
@@ -261,10 +332,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DB03B651734E8F90041F0E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB03B661734E8F90041F0E9 /* ofxiphone-Info.plist in Resources */,
+				9DB03B671734E8F90041F0E9 /* Project.xcconfig in Resources */,
+				9DB03B681734E8F90041F0E9 /* CoreOF.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		9255DD331112741900D6945E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -rf bin/data/ \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\"\n";
+		};
+		9DB03B7B1734E8F90041F0E9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,9 +383,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DB03B691734E8F90041F0E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB03B6A1734E8F90041F0E9 /* main.mm in Sources */,
+				9DB03B6B1734E8F90041F0E9 /* testApp.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9DB03B631734E8F90041F0E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "iPhone+OF Static Library";
+			targetProxy = 9DB03B641734E8F90041F0E9 /* PBXContainerItemProxy */;
+		};
 		E41D410413B3A11300A75A5D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "iPhone+OF Static Library";
@@ -323,6 +431,33 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv6 armv7";
+			};
+			name = Release;
+		};
+		9DB03B7D1734E8F90041F0E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
+				INFOPLIST_FILE = "manekko copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = manekkoPhone;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv6 armv7";
+			};
+			name = Debug;
+		};
+		9DB03B7E1734E8F90041F0E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
+				INFOPLIST_FILE = "manekko copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = manekkoPhone;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
@@ -393,11 +528,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "manekko" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "manekkoPad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DB03B7C1734E8F90041F0E9 /* Build configuration list for PBXNativeTarget "manekkoPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB03B7D1734E8F90041F0E9 /* Debug */,
+				9DB03B7E1734E8F90041F0E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
