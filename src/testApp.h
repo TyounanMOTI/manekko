@@ -35,7 +35,6 @@ private:
 	int beat_per_minutes_;
 	int last_beat_time_ms_;
 
-	void authenticateLocalPlayer();
 	void drawBPMSetting();
 };
 

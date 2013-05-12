@@ -18,16 +18,6 @@ void testApp::setup(){
 	
 	ofBackground(127,127,127);
 
-	// GameKit initialization
-	authenticateLocalPlayer();
-
-	// matchmake nearby player
-	GKMatchmaker *matchmaker = [GKMatchmaker sharedMatchmaker];
-	[matchmaker startBrowsingForNearbyPlayersWithReachableHandler:^(NSString *playerID, BOOL reachable) {
-		ofLog(OF_LOG_NOTICE, "found");
-		ofLog(OF_LOG_NOTICE, [[playerID copy] UTF8String]);
-	}];
-
 	// BPM init
 	beat_per_minutes_ = 120;
 	last_beat_time_ms_ = ofGetElapsedTimeMillis();
@@ -35,24 +25,6 @@ void testApp::setup(){
 	// sound stream init
 	ofSoundStreamSetup(1, 0);
 	ofSoundStreamStart();
-}
-
-void testApp::authenticateLocalPlayer() {
-	// Authenticate LocalPlayer
-	GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
-	localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-		if (viewController) {
-			UIViewController *current_view_controller = ofxiPhoneGetViewController();
-			[current_view_controller presentViewController:viewController animated:YES completion:nil];
-		}
-		if (localPlayer.authenticated == YES) {
-			ofLog(OF_LOG_NOTICE, "succeed");
-		} else if (error != nil){
-			ofLog(OF_LOG_ERROR, [[[error localizedDescription] copy] UTF8String]);
-		} else {
-			ofLog(OF_LOG_ERROR, "fail, no error info");
-		}
-	};
 }
 
 //--------------------------------------------------------------
