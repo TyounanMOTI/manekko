@@ -34,6 +34,8 @@
 		9DB03B8217362E170041F0E9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB03B8117362E170041F0E9 /* GameKit.framework */; };
 		9DB03B8317362E280041F0E9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB03B8117362E170041F0E9 /* GameKit.framework */; };
 		9DB03B86173651140041F0E9 /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB03B85173651140041F0E9 /* Default~ipad.png */; };
+		9DEB6DF5173F8F9B00F23D96 /* KorgWirelessSyncStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6DF4173F8F9B00F23D96 /* KorgWirelessSyncStart.m */; };
+		9DEB6DF6173F8F9B00F23D96 /* KorgWirelessSyncStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB6DF4173F8F9B00F23D96 /* KorgWirelessSyncStart.m */; };
 		BB16EBD20F2B2A9500518274 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD10F2B2A9500518274 /* OpenGLES.framework */; };
 		BB16EBD90F2B2AB500518274 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD80F2B2AB500518274 /* QuartzCore.framework */; };
 		BB24DDCA10DA781C00E9C588 /* ofxiphone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */; };
@@ -86,6 +88,8 @@
 		9DB03B801734E8F90041F0E9 /* manekko copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "manekko copy-Info.plist"; path = "/Users/TyounanMOTI/Develop/openFrameworks/apps/myApps/manekko/manekko copy-Info.plist"; sourceTree = "<absolute>"; };
 		9DB03B8117362E170041F0E9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		9DB03B85173651140041F0E9 /* Default~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~ipad.png"; sourceTree = "<group>"; };
+		9DEB6DF3173F8F9B00F23D96 /* KorgWirelessSyncStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KorgWirelessSyncStart.h; path = ../../../../WISTSDK/WIST/KorgWirelessSyncStart.h; sourceTree = "<group>"; };
+		9DEB6DF4173F8F9B00F23D96 /* KorgWirelessSyncStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KorgWirelessSyncStart.m; path = ../../../../WISTSDK/WIST/KorgWirelessSyncStart.m; sourceTree = "<group>"; };
 		BB16EBD10F2B2A9500518274 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BB16EBD80F2B2AB500518274 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ofxiphone-Info.plist"; sourceTree = "<group>"; };
@@ -194,9 +198,19 @@
 			name = "core frameworks";
 			sourceTree = "<group>";
 		};
+		9DEB6DF7173F8FA000F23D96 /* WIST */ = {
+			isa = PBXGroup;
+			children = (
+				9DEB6DF3173F8F9B00F23D96 /* KorgWirelessSyncStart.h */,
+				9DEB6DF4173F8F9B00F23D96 /* KorgWirelessSyncStart.m */,
+			);
+			name = WIST;
+			sourceTree = "<group>";
+		};
 		BB16E9930F2B1E5900518274 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				9DEB6DF7173F8FA000F23D96 /* WIST */,
 				9DB03B8117362E170041F0E9 /* GameKit.framework */,
 				BBE5E94E0F497BD800F28951 /* core */,
 			);
@@ -390,6 +404,7 @@
 			files = (
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* testApp.mm in Sources */,
+				9DEB6DF5173F8F9B00F23D96 /* KorgWirelessSyncStart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +414,7 @@
 			files = (
 				9DB03B6A1734E8F90041F0E9 /* main.mm in Sources */,
 				9DB03B6B1734E8F90041F0E9 /* testApp.mm in Sources */,
+				9DEB6DF6173F8F9B00F23D96 /* KorgWirelessSyncStart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
+#include "KorgWirelessSyncStart.h"
 
 class testApp : public ofxiPhoneApp {
 	
@@ -34,6 +35,8 @@ private:
 	int beat_radius_;
 	int beat_per_minutes_;
 	int last_beat_time_ms_;
+
+	KorgWirelessSyncStart *wist_;
 
 	void drawBPMSetting();
 };

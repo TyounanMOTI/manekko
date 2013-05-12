@@ -25,6 +25,9 @@ void testApp::setup(){
 	// sound stream init
 	ofSoundStreamSetup(1, 0);
 	ofSoundStreamStart();
+
+	// WIST init
+	wist_ = [[KorgWirelessSyncStart alloc] init];
 }
 
 //--------------------------------------------------------------
@@ -92,7 +95,7 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 
 //--------------------------------------------------------------
 void testApp::touchDoubleTap(ofTouchEventArgs &touch){
-
+	[wist_ searchPeer];
 }
 
 //--------------------------------------------------------------
