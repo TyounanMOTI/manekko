@@ -1,5 +1,6 @@
 #include "testApp.h"
 #include "GameKit/GameKit.h"
+#include <cmath>
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -19,6 +20,10 @@ void testApp::setup(){
 
 	// GameKit initialization
 	authenticateLocalPlayer();
+
+	// BPM init
+	beat_per_minutes_ = 120;
+	last_beat_time_ms_ = ofGetElapsedTimeMillis();
 }
 
 void testApp::authenticateLocalPlayer() {
@@ -41,15 +46,35 @@ void testApp::authenticateLocalPlayer() {
 
 //--------------------------------------------------------------
 void testApp::update(){
+	// update Beat radius
+	beat_radius_--;
+	if (beat_radius_ < 1) {
+		beat_radius_ = 1;
+	}
 
+	// beat timing
+	TimeMillis elapsed_time_ms = ofGetElapsedTimeMillis() - last_beat_time_ms_;
+	TimeMillis interval_ms = 60.0 * 1000 / beat_per_minutes_;	// [拍ズレ] 切り捨てたので、拍がずれるかも
+
+	// [拍ズレ] updateは60fpsなので、拍がずれるかも
+	// ↓ofSoundStreamを使うとよい？
+	// http://forum.openframeworks.cc/index.php?&topic=3404.0
+	if (elapsed_time_ms > interval_ms) {
+		beat_radius_ = 300;
+		last_beat_time_ms_ = ofGetElapsedTimeMillis();
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	// draw Beat
-	
-
 	drawBPMSetting();
+
+	// draw Beat
+	ofPushStyle();
+	ofSetColor(118, 255, 167);
+	ofFill();
+	ofCircle(ofGetScreenWidth()/2, ofGetScreenHeight()/2, beat_radius_);
+	ofPopStyle();
 }
 
 void testApp::drawBPMSetting() {

@@ -24,8 +24,14 @@ public:
 	void deviceOrientationChanged(int newOrientation);
 
 private:
+	typedef unsigned long long TimeMillis;
+
 	ofVec2f previous_touch_position_;
 	ofVec2f current_touch_position_;
+
+	int beat_radius_;
+	int beat_per_minutes_;
+	int last_beat_time_ms_;
 
 	void authenticateLocalPlayer();
 	void drawBPMSetting();
