@@ -18,6 +18,10 @@ void testApp::setup(){
 	ofBackground(127,127,127);
 
 	// GameKit initialization
+	authenticateLocalPlayer();
+}
+
+void testApp::authenticateLocalPlayer() {
 	// Authenticate LocalPlayer
 	GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
 	localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
