@@ -24,8 +24,8 @@ public:
 	void deviceOrientationChanged(int newOrientation);
 
 private:
-	ofVec2f _previous_touch_position;
-	ofVec2f _current_touch_position;
+	ofVec2f previous_touch_position_;
+	ofVec2f current_touch_position_;
 
 	void authenticateLocalPlayer();
 	void drawBPMSetting();

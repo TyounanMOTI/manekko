@@ -46,12 +46,15 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
+	// draw Beat
+	
+
 	drawBPMSetting();
 }
 
 void testApp::drawBPMSetting() {
 	// draw cirlce: BPM setting
-	float radius = _previous_touch_position.distance(_current_touch_position);
+	float radius = previous_touch_position_.distance(current_touch_position_);
 	ofSetColor(255,255,255);
 	ofFill();
 	ofCircle(ofGetScreenWidth()/2, ofGetScreenHeight()/2, radius);
@@ -64,12 +67,12 @@ void testApp::exit(){
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch){
-	_previous_touch_position.set(touch.x, touch.y);
+	previous_touch_position_.set(touch.x, touch.y);
 }
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch){
-	_current_touch_position.set(touch.x, touch.y);
+	current_touch_position_.set(touch.x, touch.y);
 }
 
 //--------------------------------------------------------------
