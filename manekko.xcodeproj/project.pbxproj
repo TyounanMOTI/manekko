@@ -31,6 +31,9 @@
 		9DB03B781734E8F90041F0E9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400713B39D2100A75A5D /* CoreMedia.framework */; };
 		9DB03B791734E8F90041F0E9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400813B39D2100A75A5D /* CoreVideo.framework */; };
 		9DB03B7A1734E8F90041F0E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400913B39D2100A75A5D /* MapKit.framework */; };
+		9DB03B8217362E170041F0E9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB03B8117362E170041F0E9 /* GameKit.framework */; };
+		9DB03B8317362E280041F0E9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB03B8117362E170041F0E9 /* GameKit.framework */; };
+		9DB03B86173651140041F0E9 /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB03B85173651140041F0E9 /* Default~ipad.png */; };
 		BB16EBD20F2B2A9500518274 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD10F2B2A9500518274 /* OpenGLES.framework */; };
 		BB16EBD90F2B2AB500518274 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD80F2B2AB500518274 /* QuartzCore.framework */; };
 		BB24DDCA10DA781C00E9C588 /* ofxiphone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */; };
@@ -73,7 +76,7 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* manekko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = manekko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* manekkoPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = manekkoPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_Prefix.pch; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 		53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		9DB03B7F1734E8F90041F0E9 /* manekkoPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = manekkoPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB03B801734E8F90041F0E9 /* manekko copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "manekko copy-Info.plist"; path = "/Users/TyounanMOTI/Develop/openFrameworks/apps/myApps/manekko/manekko copy-Info.plist"; sourceTree = "<absolute>"; };
+		9DB03B8117362E170041F0E9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9DB03B85173651140041F0E9 /* Default~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~ipad.png"; sourceTree = "<group>"; };
 		BB16EBD10F2B2A9500518274 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BB16EBD80F2B2AB500518274 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ofxiphone-Info.plist"; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E41D421413B3A95300A75A5D /* libofxiPhone_iphoneos_Debug.a in Frameworks */,
+				9DB03B8217362E170041F0E9 /* GameKit.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -125,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB03B6D1734E8F90041F0E9 /* libofxiPhone_iphoneos_Debug.a in Frameworks */,
+				9DB03B8317362E280041F0E9 /* GameKit.framework in Frameworks */,
 				9DB03B6E1734E8F90041F0E9 /* Foundation.framework in Frameworks */,
 				9DB03B6F1734E8F90041F0E9 /* UIKit.framework in Frameworks */,
 				9DB03B701734E8F90041F0E9 /* CoreGraphics.framework in Frameworks */,
@@ -147,7 +154,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* manekko.app */,
+				1D6058910D05DD3D006BFB54 /* manekkoPad.app */,
 				9DB03B7F1734E8F90041F0E9 /* manekkoPhone.app */,
 			);
 			name = Products;
@@ -156,6 +163,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				9DB03B85173651140041F0E9 /* Default~ipad.png */,
 				E4D8936A11527B74007E1F53 /* src */,
 				BB24E1F710DAA51900E9C588 /* openFrameworks */,
 				BB16F26B0F2B646B00518274 /* addons */,
@@ -189,6 +197,7 @@
 		BB16E9930F2B1E5900518274 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				9DB03B8117362E170041F0E9 /* GameKit.framework */,
 				BBE5E94E0F497BD800F28951 /* core */,
 			);
 			name = libs;
@@ -258,7 +267,7 @@
 			);
 			name = manekkoPad;
 			productName = iPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* manekko.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* manekkoPad.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9DB03B621734E8F90041F0E9 /* manekkoPhone */ = {
@@ -329,6 +338,7 @@
 				BB24DDCA10DA781C00E9C588 /* ofxiphone-Info.plist in Resources */,
 				E41D3ED713B38FB500A75A5D /* Project.xcconfig in Resources */,
 				E41D3EE613B3906D00A75A5D /* CoreOF.xcconfig in Resources */,
+				9DB03B86173651140041F0E9 /* Default~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

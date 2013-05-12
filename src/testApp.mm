@@ -1,4 +1,5 @@
 #include "testApp.h"
+#include "GameKit/GameKit.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -15,6 +16,23 @@ void testApp::setup(){
 	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	
 	ofBackground(127,127,127);
+
+	// GameKit initialization
+	// Authenticate LocalPlayer
+	GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+	localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+		if (viewController) {
+			UIViewController *current_view_controller = ofxiPhoneGetViewController();
+			[current_view_controller presentViewController:viewController animated:YES completion:nil];
+		}
+		if (localPlayer.authenticated == YES) {
+			ofLog(OF_LOG_NOTICE, "succeed");
+		} else if (error != nil){
+			ofLog(OF_LOG_ERROR, [[[error localizedDescription] copy] UTF8String]);
+		} else {
+			ofLog(OF_LOG_ERROR, "fail, no error info");
+		}
+	};
 }
 
 //--------------------------------------------------------------
