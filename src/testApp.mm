@@ -42,13 +42,15 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	float radius = _previous_touch_position.distance(_current_touch_position);
+	drawBPMSetting();
+}
 
+void testApp::drawBPMSetting() {
+	// draw cirlce: BPM setting
+	float radius = _previous_touch_position.distance(_current_touch_position);
 	ofSetColor(255,255,255);
 	ofFill();
 	ofCircle(ofGetScreenWidth()/2, ofGetScreenHeight()/2, radius);
-	ofLog(OF_LOG_NOTICE, ofToString(radius));
-
 }
 
 //--------------------------------------------------------------

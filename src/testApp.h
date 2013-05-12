@@ -26,6 +26,8 @@ public:
 private:
 	ofVec2f _previous_touch_position;
 	ofVec2f _current_touch_position;
+
+	void drawBPMSetting();
 };
 
 
