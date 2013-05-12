@@ -67,7 +67,7 @@ void testApp::audioRequested(float *output, int bufferSize, int nChannels) {
 	// ズレ vs 拍動しない
 	//   - 5msなら許容範囲かな？
 	if (ofGetElapsedTimeMillis() % interval_ms < 10) {
-		beat_radius_ = 300;
+		beat_radius_ = ofGetScreenWidth() * 0.4;
 	}
 }
 
