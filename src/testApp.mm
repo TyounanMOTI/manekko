@@ -50,8 +50,8 @@ void testApp::authenticateLocalPlayer() {
 
 //--------------------------------------------------------------
 void testApp::update(){
-	// update Beat radius
-	beat_radius_--;
+	// shrink Beat radius
+	beat_radius_ -= 3;
 	if (beat_radius_ < 1) {
 		beat_radius_ = 1;
 	}
@@ -59,15 +59,15 @@ void testApp::update(){
 
 void testApp::audioRequested(float *output, int bufferSize, int nChannels) {
 	// beat timing
-	TimeMillis elapsed_time_ms = ofGetElapsedTimeMillis() - last_beat_time_ms_;
+	// ↓拍ズレ防止のため、ofSoundStreamで。
+	// http://forum.openframeworks.cc/index.php?&topic=3404.0
 	TimeMillis interval_ms = 60.0 * 1000 / beat_per_minutes_;	// [拍ズレ] 切り捨てたので、拍がずれるかも
 
-	// [拍ズレ] updateは60fpsなので、拍がずれるかも
-	// ↓ofSoundStreamを使うとよい？
-	// http://forum.openframeworks.cc/index.php?&topic=3404.0
-	if (elapsed_time_ms > interval_ms) {
+	// [拍ズレ] mod演算を使えばよい？
+	// ズレ vs 拍動しない
+	//   - 5msなら許容範囲かな？
+	if (ofGetElapsedTimeMillis() % interval_ms < 10) {
 		beat_radius_ = 300;
-		last_beat_time_ms_ = ofGetElapsedTimeMillis();
 	}
 }
 
