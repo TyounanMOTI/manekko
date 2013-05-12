@@ -4,6 +4,7 @@
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
 #include "KorgWirelessSyncStart.h"
+#import "WISTManekkoDelegate.h"
 
 class testApp : public ofxiPhoneApp {
 	
@@ -37,6 +38,7 @@ private:
 	int last_beat_time_ms_;
 
 	KorgWirelessSyncStart *wist_;
+	WISTManekkoDelegate *manekkoDelegate_;
 
 	void drawBPMSetting();
 };

@@ -1,6 +1,7 @@
 #include "testApp.h"
 #include "GameKit/GameKit.h"
 #include <cmath>
+#import "WISTManekkoDelegate.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -28,6 +29,9 @@ void testApp::setup(){
 
 	// WIST init
 	wist_ = [[KorgWirelessSyncStart alloc] init];
+	manekkoDelegate_ = [[WISTManekkoDelegate alloc] init];
+	wist_.delegate = manekkoDelegate_;
+	
 }
 
 //--------------------------------------------------------------
@@ -76,6 +80,8 @@ void testApp::drawBPMSetting() {
 //--------------------------------------------------------------
 void testApp::exit(){
 	ofSoundStreamStop();
+	[manekkoDelegate_ release];
+	[wist_ release];
 }
 
 //--------------------------------------------------------------
