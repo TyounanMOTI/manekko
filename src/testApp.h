@@ -23,6 +23,8 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
+	void audioRequested( float * output, int bufferSize, int nChannels );
+	
 private:
 	typedef unsigned long long TimeMillis;
 

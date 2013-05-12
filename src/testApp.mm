@@ -24,6 +24,10 @@ void testApp::setup(){
 	// BPM init
 	beat_per_minutes_ = 120;
 	last_beat_time_ms_ = ofGetElapsedTimeMillis();
+
+	// sound stream init
+	ofSoundStreamSetup(1, 0);
+	ofSoundStreamStart();
 }
 
 void testApp::authenticateLocalPlayer() {
@@ -51,7 +55,9 @@ void testApp::update(){
 	if (beat_radius_ < 1) {
 		beat_radius_ = 1;
 	}
+}
 
+void testApp::audioRequested(float *output, int bufferSize, int nChannels) {
 	// beat timing
 	TimeMillis elapsed_time_ms = ofGetElapsedTimeMillis() - last_beat_time_ms_;
 	TimeMillis interval_ms = 60.0 * 1000 / beat_per_minutes_;	// [拍ズレ] 切り捨てたので、拍がずれるかも
@@ -87,7 +93,7 @@ void testApp::drawBPMSetting() {
 
 //--------------------------------------------------------------
 void testApp::exit(){
-
+	ofSoundStreamStop();
 }
 
 //--------------------------------------------------------------
