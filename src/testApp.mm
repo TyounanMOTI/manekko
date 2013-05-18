@@ -21,6 +21,7 @@ void testApp::setup(){
 
 	// BPM init
 	beat_per_minutes_ = 60;
+	beat_max_radius_ = ofGetScreenWidth() * 0.4;
 
 	// Timer init
 	time_offset_ns_ = 0;
@@ -59,7 +60,7 @@ void testApp::audioRequested(float *output, int bufferSize, int nChannels) {
 	//   - vs 拍動しない
 	//     - 10msなら許容範囲かな？
 	if (now_ms() % interval_ms < 10) {
-		beat_radius_ = ofGetScreenWidth() * 0.4;
+		beat_radius_ = beat_max_radius_;
 	}
 }
 

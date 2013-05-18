@@ -39,6 +39,7 @@ private:
 	ofVec2f current_touch_position_;
 
 	int beat_radius_;
+	int beat_max_radius_;
 	int beat_per_minutes_;
 	Time time_offset_ns_;
 	mach_timebase_info_data_t timebase_info_;
