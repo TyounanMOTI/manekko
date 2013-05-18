@@ -1,5 +1,5 @@
 # manekko
-KORGのWISTを使ってみた。
+OpenFrameworksと、KORGのWISTを使ってみた。
 
 ２台のiOSデバイス間で、拍子を同期するアプリ。
 起動時は、バスドラムの音が二つのデバイスでズレている。
@@ -9,6 +9,13 @@ WISTでつながると、片方の円が赤くなる。
 赤い方のデバイスをタップすると、緑の円が同期する。
 
 ちなみに、緑の方のデバイスをタップすると、スネアの音が鳴る。
+
+## 必要なもの
+WIST library中の以下のファイル
+- KorgWirelessSyncStart.h
+- KorgWirelessSyncStart.m
+
+あと、OpenFrameworks。
 
 ## LICENSE
 following files are public domain.
