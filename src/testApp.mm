@@ -20,8 +20,11 @@ void testApp::setup(){
 	ofBackground(127,127,127);
 
 	// BPM init
-	beat_per_minutes_ = 120;
-	last_beat_time_ms_ = ofGetElapsedTimeMillis();
+	beat_per_minutes_ = 60;
+
+	// Timer init
+	time_offset_ns_ = 0;
+	mach_timebase_info(&timebase_info_);
 
 	// sound stream init
 	ofSoundStreamSetup(1, 0);
@@ -29,7 +32,7 @@ void testApp::setup(){
 
 	// WIST init
 	wist_ = [[KorgWirelessSyncStart alloc] init];
-	manekkoDelegate_ = [[WISTManekkoDelegate alloc] init];
+	manekkoDelegate_ = [[WISTManekkoDelegate alloc] init:this];
 	wist_.delegate = manekkoDelegate_;
 	
 }
@@ -47,26 +50,39 @@ void testApp::audioRequested(float *output, int bufferSize, int nChannels) {
 	// beat timing
 	// ↓拍ズレ防止のため、ofSoundStreamで。
 	// http://forum.openframeworks.cc/index.php?&topic=3404.0
-	TimeMillis interval_ms = 60.0 * 1000 / beat_per_minutes_;	// [拍ズレ] 切り捨てたので、拍がずれるかも
+	Time interval_ms = 60 * 1000 / beat_per_minutes_;	// [拍ズレ] 切り捨てたので、拍がずれるかも
 
 	// [拍ズレ] mod演算を使えばよい？
 	// ズレ vs 拍動しない
 	//   - 5msなら許容範囲かな？
-	if (ofGetElapsedTimeMillis() % interval_ms < 10) {
+	Time current_time_ms = now() / (1000 * 1000); // ns -> ms
+	if (current_time_ms % interval_ms < 10) {
 		beat_radius_ = ofGetScreenWidth() * 0.4;
 	}
+}
+
+testApp::Time testApp::now() {
+	return mach_absolute_time() * timebase_info_.numer / timebase_info_.denom;
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 	drawBPMSetting();
+	drawBeat();
+}
 
-	// draw Beat
+void testApp::drawBeat() {
 	ofPushStyle();
-	ofSetColor(118, 255, 167);
+	if (wist_.isConnected && wist_.isMaster) {
+		// if Master, beats Red circle
+		ofSetColor(255, 139, 139);
+	} else {
+		ofSetColor(118, 255, 167);
+	}
 	ofFill();
 	ofCircle(ofGetScreenWidth()/2, ofGetScreenHeight()/2, beat_radius_);
 	ofPopStyle();
+
 }
 
 void testApp::drawBPMSetting() {
@@ -101,7 +117,11 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 
 //--------------------------------------------------------------
 void testApp::touchDoubleTap(ofTouchEventArgs &touch){
-	[wist_ searchPeer];
+	if (![wist_ isConnected]) {
+		[wist_ searchPeer];
+	} else {
+		[wist_ sendStartCommand:mach_absolute_time() withTempo:120];
+	}
 }
 
 //--------------------------------------------------------------
@@ -129,4 +149,3 @@ void testApp::deviceOrientationChanged(int newOrientation){
 void testApp::touchCancelled(ofTouchEventArgs& args){
 
 }
-

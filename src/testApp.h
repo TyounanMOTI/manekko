@@ -5,9 +5,14 @@
 #include "ofxiPhoneExtras.h"
 #include "KorgWirelessSyncStart.h"
 #import "WISTManekkoDelegate.h"
+#import <mach/mach_time.h>
+
+@class WISTManekkoDelegate;
 
 class testApp : public ofxiPhoneApp {
-	
+
+	typedef uint64_t Time;
+
 public:
 	void setup();
 	void update();
@@ -26,21 +31,22 @@ public:
 	void deviceOrientationChanged(int newOrientation);
 
 	void audioRequested( float * output, int bufferSize, int nChannels );
-	
-private:
-	typedef unsigned long long TimeMillis;
 
+	void setTimeOffset(Time hostTime); // nano seconds
+
+private:
 	ofVec2f previous_touch_position_;
 	ofVec2f current_touch_position_;
 
 	int beat_radius_;
 	int beat_per_minutes_;
-	int last_beat_time_ms_;
+	Time time_offset_ns_;
+	mach_timebase_info_data_t timebase_info_;
 
 	KorgWirelessSyncStart *wist_;
 	WISTManekkoDelegate *manekkoDelegate_;
 
 	void drawBPMSetting();
+	void drawBeat();
+	Time now();
 };
-
-
