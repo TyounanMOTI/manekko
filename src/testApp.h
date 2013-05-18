@@ -40,6 +40,8 @@ private:
 
 	int beat_radius_;
 	int beat_max_radius_;
+	int beat_min_radius_;
+	int beat_shrink_speed_per_frame_;
 	int beat_per_minutes_;
 	Time time_offset_ns_;
 	mach_timebase_info_data_t timebase_info_;
@@ -50,4 +52,5 @@ private:
 	void drawBPMSetting();
 	void drawBeat();
 	Time now_ms();
+	void shrinkBeatCircle();
 };
