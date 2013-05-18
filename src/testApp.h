@@ -46,7 +46,7 @@ private:
 	int beat_per_minutes_;
 	
 	HostTime start_time_ = 0;
-	BOOL is_beat_started = NO;
+	BOOL is_beat_sync_started_ = NO;
 
 	KorgWirelessSyncStart *wist_;
 	WISTManekkoDelegate *manekkoDelegate_;
@@ -54,10 +54,8 @@ private:
 	ofSoundPlayer kick_player_;
 	ofSoundPlayer snare_player_;
 
-	double beatPerFrame(int BPM);
-	void drawBPMSetting();
-	void drawBeat();
-	MillisecTime hostTimeToMillisec(HostTime hostTime);
+	double BPMtoBeatPerFrame(int BPM);
+	MillisecTime hostTimeToMillisecTime(HostTime hostTime);
 	void shrinkBeatCircle();
 	void beatTiming(MillisecTime now_ms);
 };
