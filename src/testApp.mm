@@ -50,24 +50,27 @@ void testApp::audioRequested(float *output, int bufferSize, int nChannels) {
 	// beat timing
 	// ↓拍ズレ防止のため、ofSoundStreamで。
 	// http://forum.openframeworks.cc/index.php?&topic=3404.0
-	Time interval_ms = 60 * 1000 / beat_per_minutes_;	// [拍ズレ] 切り捨てたので、拍がずれるかも
 
-	// [拍ズレ] mod演算を使えばよい？
-	// ズレ vs 拍動しない
-	//   - 5msなら許容範囲かな？
-	Time current_time_ms = now() / (1000 * 1000); // ns -> ms
-	if (current_time_ms % interval_ms < 10) {
+	// 拍のアタマで円を大きくする
+	// [拍ズレ] interval_ms：切り捨てたので、拍がずれるかも
+	Time interval_ms = 60 * 1000 / beat_per_minutes_;
+
+	// [拍ズレ] mod演算でタイミングをはかる
+	//   - vs 拍動しない
+	//     - 10msなら許容範囲かな？
+	if (now_ms() % interval_ms < 10) {
 		beat_radius_ = ofGetScreenWidth() * 0.4;
 	}
 }
 
-testApp::Time testApp::now() {
-	return mach_absolute_time() * timebase_info_.numer / timebase_info_.denom;
+testApp::Time testApp::now_ms() {
+	Time now_nanosec =  mach_absolute_time() * timebase_info_.numer / timebase_info_.denom;
+	Time now_millisec = now_nanosec / (1000 * 1000);
+	return now_millisec;
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	drawBPMSetting();
 	drawBeat();
 }
 
@@ -82,15 +85,6 @@ void testApp::drawBeat() {
 	ofFill();
 	ofCircle(ofGetScreenWidth()/2, ofGetScreenHeight()/2, beat_radius_);
 	ofPopStyle();
-
-}
-
-void testApp::drawBPMSetting() {
-	// draw cirlce: BPM setting
-	float radius = previous_touch_position_.distance(current_touch_position_);
-	ofSetColor(255,255,255);
-	ofFill();
-	ofCircle(ofGetScreenWidth()/2, ofGetScreenHeight()/2, radius);
 }
 
 //--------------------------------------------------------------
@@ -102,12 +96,10 @@ void testApp::exit(){
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch){
-	previous_touch_position_.set(touch.x, touch.y);
 }
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch){
-	current_touch_position_.set(touch.x, touch.y);
 }
 
 //--------------------------------------------------------------
@@ -119,8 +111,6 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 void testApp::touchDoubleTap(ofTouchEventArgs &touch){
 	if (![wist_ isConnected]) {
 		[wist_ searchPeer];
-	} else {
-		[wist_ sendStartCommand:mach_absolute_time() withTempo:120];
 	}
 }
 

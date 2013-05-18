@@ -48,5 +48,5 @@ private:
 
 	void drawBPMSetting();
 	void drawBeat();
-	Time now();
+	Time now_ms();
 };
