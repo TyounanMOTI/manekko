@@ -15,6 +15,7 @@
 }
 
 - (void)wistStartCommandReceived:(uint64_t)hostTime withTempo:(float)tempo {
+	app_->startCommandReceived(hostTime, tempo);
 }
 
 - (void)wistStopCommandReceived:(uint64_t)hostTime {

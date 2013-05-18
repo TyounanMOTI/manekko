@@ -32,7 +32,7 @@ public:
 
 	void audioRequested( float * output, int bufferSize, int nChannels );
 
-	void setTimeOffset(Time hostTime); // nano seconds
+	void startCommandReceived(Time hostTime, float tempo);
 
 private:
 	ofVec2f previous_touch_position_;
@@ -53,5 +53,6 @@ private:
 	void drawBPMSetting();
 	void drawBeat();
 	Time now_ms();
+	Time now_ns();
 	void shrinkBeatCircle();
 };

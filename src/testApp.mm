@@ -75,10 +75,12 @@ void testApp::audioRequested(float *output, int bufferSize, int nChannels) {
 	}
 }
 
+testApp::Time testApp::now_ns() {
+	return mach_absolute_time() * timebase_info_.numer / timebase_info_.denom;
+}
+
 testApp::Time testApp::now_ms() {
-	Time now_nanosec =  mach_absolute_time() * timebase_info_.numer / timebase_info_.denom;
-	Time now_millisec = now_nanosec / (1000 * 1000);
-	return now_millisec;
+	return now_ns() / (1000 * 1000);
 }
 
 //--------------------------------------------------------------
@@ -121,9 +123,16 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 
 //--------------------------------------------------------------
 void testApp::touchDoubleTap(ofTouchEventArgs &touch){
-	if (![wist_ isConnected]) {
+	if (wist_.isConnected == NO) {
 		[wist_ searchPeer];
+	} else {
+		[wist_ sendStartCommand:now_ns() withTempo:beat_per_minutes_];
 	}
+}
+
+//--------------------------------------------------------------
+void testApp::startCommandReceived(Time hostTime, float tempo) {
+	ofLog(OF_LOG_NOTICE) << "host: " << hostTime << ", local: " << now_ns();
 }
 
 //--------------------------------------------------------------
