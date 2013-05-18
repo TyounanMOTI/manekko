@@ -49,6 +49,7 @@ private:
 	KorgWirelessSyncStart *wist_;
 	WISTManekkoDelegate *manekkoDelegate_;
 
+	double beatPerFrame(int BPM);
 	void drawBPMSetting();
 	void drawBeat();
 	Time now_ms();

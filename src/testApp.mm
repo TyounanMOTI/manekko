@@ -26,8 +26,7 @@ void testApp::setup(){
 	beat_max_radius_ = ofGetScreenWidth() * 0.4;
 	beat_min_radius_ = beat_max_radius_ * 0.5;
 	int shrink_speed_per_beat = beat_max_radius_ - beat_min_radius_;
-	int shrink_speed_per_second = shrink_speed_per_beat * beat_per_minutes_ / (60 /* sec/min */);
-	beat_shrink_speed_per_frame_ = shrink_speed_per_second * (1.0 /* sec */ / ofGetFrameRate());
+	beat_shrink_speed_per_frame_ = shrink_speed_per_beat * beatPerFrame(beat_per_minutes_);
 	
 	// Timer init
 	time_offset_ns_ = 0;
@@ -41,6 +40,10 @@ void testApp::setup(){
 	wist_ = [[KorgWirelessSyncStart alloc] init];
 	manekkoDelegate_ = [[WISTManekkoDelegate alloc] init:this];
 	wist_.delegate = manekkoDelegate_;
+}
+
+double testApp::beatPerFrame(int BPM) {
+	return BPM / (60.0 /* min/sec */) / ofGetFrameRate();
 }
 
 //--------------------------------------------------------------
