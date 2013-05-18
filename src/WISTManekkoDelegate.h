@@ -16,5 +16,4 @@ class testApp;
 }
 
 - (id)init:(testApp*)app;
-
 @end

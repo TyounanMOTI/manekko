@@ -11,7 +11,8 @@
 
 class testApp : public ofxiPhoneApp {
 
-	typedef uint64_t Time;
+	typedef int64_t MillisecTime;
+	typedef uint64_t HostTime;
 
 public:
 	void setup();
@@ -32,7 +33,7 @@ public:
 
 	void audioRequested( float * output, int bufferSize, int nChannels );
 
-	void startCommandReceived(Time hostTime, float tempo);
+	void startCommandReceived(HostTime hostTime, float tempo);
 
 private:
 	ofVec2f previous_touch_position_;
@@ -43,16 +44,20 @@ private:
 	int beat_min_radius_;
 	int beat_shrink_speed_per_frame_;
 	int beat_per_minutes_;
-	Time time_offset_ns_;
-	mach_timebase_info_data_t timebase_info_;
+	
+	HostTime start_time_ = 0;
+	BOOL is_beat_started = NO;
 
 	KorgWirelessSyncStart *wist_;
 	WISTManekkoDelegate *manekkoDelegate_;
 
+	ofSoundPlayer kick_player_;
+	ofSoundPlayer snare_player_;
+
 	double beatPerFrame(int BPM);
 	void drawBPMSetting();
 	void drawBeat();
-	Time now_ms();
-	Time now_ns();
+	MillisecTime hostTimeToMillisec(HostTime hostTime);
 	void shrinkBeatCircle();
+	void beatTiming(MillisecTime now_ms);
 };
